@@ -4,3 +4,4 @@ bcrypt - encripta claves
 
 npm i morgan -D 
 -D : Descargar como desarrollo
+.gitingnore - ignorar carpetas
