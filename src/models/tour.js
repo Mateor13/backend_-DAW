@@ -9,6 +9,22 @@ const tourModel = {
             console.log(error)
         }
     }
+
+
+    ,
+    async getTourModel(tourId){
+        //1. Conexión a BDD 
+        const url = `http://localhost:4000/tours/${tourId}`;
+        //2. Evio de la petición 
+        const peticion = await fetch(url, {
+            method:"GET"
+        });
+        //Recibimiento de la respuesta
+        const data = await peticion.json();
+
+        // 4. Mandar respuesta al controlador
+        return data;
+    }
     ,
     async createTourModel(newTour){
         //1. Conexión a BDD 
@@ -41,6 +57,25 @@ const tourModel = {
         // 4. Mandar respuesta al controlador
         return data;
     }
+
+
+    ,
+
+    //DELETE
+    async deleteTourModel(tourId){
+        //1. Conexión a BDD 
+        const url = `http://localhost:4000/tours/${tourId}`;
+        //2. Evio de la petición 
+        const peticion = await fetch(url, {
+            method:"DELETE"
+        });
+        //Recibimiento de la respuesta
+        const data = await peticion.json();
+
+        // 4. Mandar respuesta al controlador
+        return data;
+    }
+
 }
 
 //Exportar

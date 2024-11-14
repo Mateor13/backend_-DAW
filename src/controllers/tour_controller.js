@@ -31,10 +31,33 @@ const updatedTourController = async (req, res)=>{
   }
 }
 
+const deleteTourController = async (req, res)=>{
+  const {id} = req.params
+  try {
+    await tourModel.deleteTourModel(id)
+    res.status(200).json({msg:"Tour eliminado correctamente"})
+  } catch (error) {
+    res.status(500).json(error)
+  }
+}
+
+const getTourController = async (req, res)=> {
+  const {id} = req.params
+  try {
+    const tour = await tourModel.getTourModel(id)
+    res.status(200).json(tour)
+  } catch (error) {
+    res.status(500).json(error)
+  }
+}
+
+
 //Exportación nombrada: Se exportan varias cosas
 //Export default -> Exporta solo una cosa
 export{
     getAllToursController,
     createTourController, 
-    updatedTourController
+    updatedTourController,
+    deleteTourController,
+    getTourController
 }
