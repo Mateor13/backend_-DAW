@@ -1,9 +1,15 @@
 {
-    "tours": [
-        {
-            "id":1,
-            "nombre":"Quito"
-        }
-    ],
-    "users": []
+  "tours": [
+    {
+      "id": "1",
+      "nombre": "Quito"
+    },
+    {
+      "id": "719d380e-f472-461d-b138-28a176e4dcf8",
+      "name": "Tour Baños",
+      "price": "100",
+      "status": "active"
+    }
+  ],
+  "users": []
 }
